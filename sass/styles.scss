@@ -1,0 +1,102 @@
+$large-mobile: 425px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, "sans-serif";
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 4% auto;
+  @media (max-width: $large-mobile) {
+    flex-direction: column;
+    width: 97%;
+    gap: 2rem;
+    margin-bottom: 6%;
+  }
+  .bolden {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    @media (max-width: $large-mobile) {
+      font-size: 1.9rem;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem 0;
+  }
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 30rem);
+  width: 80%;
+  margin: 4% auto;
+  gap: 2.5rem 0.8rem;
+  @media (max-width: $large-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 20rem);
+    width: 97%;
+    gap: 0.3rem 0.5rem;
+  }
+
+  .img-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem 0;
+    @media (max-width: $large-mobile) {
+      flex-direction: column;
+      &:nth-child(even) {
+        align-self: flex-end;
+      }
+    }
+
+    &:nth-child(3n-1) {
+      align-self: end;
+    }
+    .image {
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      img {
+        display: block;
+        max-width: 14rem;
+        @media (max-width: $large-mobile) {
+          max-width: 8rem;
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        position: absolute;
+        top: 0;
+        right: 18%;
+        width: 90%;
+        height: 88%;
+        transform: rotate(90deg);
+        @media (max-width: $large-mobile) {
+          right: 14%;
+          top: 10%;
+        }
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  margin: 2% 0;
+  small {
+    color: #aaa;
+    a {
+      color: #aaa;
+    }
+  }
+}
